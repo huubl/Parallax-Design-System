@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="9px" viewBox="0 0 19 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Arrow Next</title>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-1411.000000, -3232.000000)" fill="#FFFFFF">
+            <g id="Home-4" transform="translate(0.000000, 2926.000000)">
+                <g id="Links" transform="translate(1271.000000, 129.000000)">
+                    <g id="Group-3" transform="translate(0.000000, 173.000000)">
+                        <g id="Arrow-Next" transform="translate(140.000000, 4.000000)">
+                            <polygon id="Triangle" transform="translate(14.500000, 4.500000) scale(1, -1) rotate(90.000000) translate(-14.500000, -4.500000) " points="14.5 1.56477172e-12 19 9 10 9"></polygon>
+                            <rect id="Rectangle" x="0" y="4" width="12" height="1"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

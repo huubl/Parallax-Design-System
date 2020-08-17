@@ -1,0 +1,36 @@
+.contact-b {
+  strong {
+    @apply uppercase;
+  }
+
+  textarea {
+    height: 80px !important;
+  }
+
+  .section {
+    @media (max-width: 1023px) {
+      flex-flow: column wrap;
+    }
+
+    .phone--icon {
+      @apply text-white pl-30 relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        background-image: url(/app/themes/sage/resources/assets/images/phone-white.svg);
+      }
+    }
+  }
+
+  .contact__info {
+    @media (min-width: 1024px) {
+      padding-left: 20%;
+    }
+  }
+}

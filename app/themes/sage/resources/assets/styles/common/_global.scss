@@ -1,0 +1,204 @@
+// Update theme colors based off Tailwind.config
+// Output example:  var(--primary-1);
+:root {
+  --white: #fff;
+  --primary-1: #10256b;
+  --primary-2: #f70605;
+  --primary-3: #0769ac;
+  --primary-4: #474747;
+}
+
+body {
+  @apply text-gray-900 bg-primary-4 text-primary-2 text-p font-d-din;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.section--full {
+  @media (max-width: 1023px) {
+    padding: 30px 0 !important;
+  }
+}
+
+.section {
+  @apply block mx-auto;
+
+  transition: all ease 3s !important;
+  overflow-y: hidden;
+  clip-path: inset(200px);
+  filter: brightness(30%);
+}
+
+.fixed--nav {
+  @apply fixed flex justify-between items-end;
+
+  height: 100vh;
+  flex-flow: column wrap;
+  z-index: 90;
+  right: 0;
+  top: 0;
+  padding: 100px 15px;
+  width: 75px;
+  opacity: 0.3;
+  transition: all ease 1s;
+
+  @media (max-width: 1023px) {
+    padding: 30px 15px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .float-nav {
+    cursor: pointer;
+  }
+
+  .prev {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.active {
+  max-width: 100%;
+  max-height: 100%;
+  clip-path: inset(0);
+  filter: brightness(100%);
+}
+
+/// error 404
+.error404 {
+  .section--main {
+    @apply py-120 text-center;
+  }
+}
+
+.nav-is-open {
+  height: 100vh;
+}
+
+footer {
+  @apply px-15;
+
+  .copyright {
+    span,
+    a {
+      @apply font-d-din uppercase;
+
+      font-size: 12px;
+    }
+  }
+}
+
+.gradient-bl-tr {
+  background: linear-gradient(45deg, var(--primary-1) 0%, var(--primary-3) 100%);
+}
+
+.gradient-br-tl {
+  background: linear-gradient(135deg, var(--primary-1) 0%, var(--primary-3) 100%);
+}
+
+.gradient-l-r {
+  background: linear-gradient(90deg, var(--primary-3) 30%, var(--primary-1) 70%);
+}
+
+hr {
+  @apply block h-px my-8 bg-primary-4;
+
+  clear: both;
+
+  // 1024
+  @media (min-width: 1024px) {
+    @apply my-16;
+  }
+}
+
+.desktop-none {
+  @media (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+.mobile-none {
+  @media (max-width: 1023px) {
+    display: none !important;
+  }
+}
+
+address {
+  @apply not-italic leading-normal;
+
+  span:first-child {
+    @apply block;
+  }
+}
+
+iframe {
+  @apply block;
+}
+
+ol:not([class]),
+ul:not([class]) {
+  @apply mb-10 pl-10 list-disc;
+
+  list-style: none;
+}
+
+li:not([class]) {
+  position: relative;
+
+  &::before {
+    @apply bg-primary-2;
+
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+  }
+}
+
+li:not([class]) + li:not([class]) {
+  @apply mt-3;
+}
+
+//Nav-Home Button
+.menu-item-416 {
+  @media (min-width: 1024px) {
+    @apply hidden;
+  }
+}
+
+/// Dark backgrounds
+.bg-primary-1,
+.bg-primary-2,
+.bg-primary-3,
+.text-white,
+.bg-black,
+.hover--state,
+.gradient-l-r {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul:not([class]),
+  p,
+  a:not([class]),
+  span:not([class]),
+  label,
+  svg {
+    @apply text-white;
+
+    fill: white !important;
+  }
+}

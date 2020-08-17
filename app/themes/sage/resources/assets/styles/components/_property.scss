@@ -1,0 +1,431 @@
+// Contact
+.property__contact {
+  @apply p-0 text-black;
+
+  position: relative;
+  height: 100%;
+
+  p,
+  div,
+  a,
+  strong,
+  label {
+    @apply relative z-40 text-white;
+  }
+
+  strong {
+    font-size: 32px;
+  }
+
+  a strong {
+    font-size: 22px;
+  }
+
+  // 1023 <=
+  @media (max-width: 1023px) {
+    @apply mt-1;
+  }
+
+  // 1024
+  @media (min-width: 1024px) {
+    width: calc(33.3333333333% - 15px);
+  }
+
+  .gform_wrapper {
+    margin-top: 30px;
+  }
+
+  form {
+    @apply p-0;
+  }
+
+  .property__contact--agents {
+    @apply bg-primary-2 p-15;
+
+    .property__contact--agent {
+      @apply mb-15;
+
+      &:nth-last-child(1) {
+        @apply mb-0;
+      }
+    }
+  }
+
+  .property__contact--form {
+    @apply bg-primary-1 mt-30 p-15;
+  }
+}
+
+.section-home-blurb {
+  @apply pt-45;
+}
+
+// Property
+//
+
+.properties {
+  @apply pb-60;
+}
+
+.property {
+  @apply p-30 bg-primary-3;
+
+  .single & {
+    @apply bg-white p-0;
+  }
+
+  .properties & {
+    @apply w-full p-15;
+
+    @media (min-width: 768px) {
+      @apply mb-0 p-30;
+
+      width: 50%;
+    }
+
+    // 1024
+    @media (min-width: 1030px) {
+      width: 33.3333%;
+    }
+  }
+}
+
+// Adjacent Properties
+//
+.property + .property {
+  // 1023 <=
+  @media (max-width: 1023px) {
+    //
+  }
+}
+
+.hover_content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 1s;
+  top: 0;
+  background-color: rgba(#368641, 0.5);
+  transform: scale(0);
+}
+
+// Thumb
+.property__thumb {
+  width: 100%;
+  padding: 175px 0;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 120px 0;
+  }
+
+  &:hover {
+    .hover_content {
+      top: 0;
+      transform: scale(1);
+    }
+  }
+}
+
+.property__title {
+  @apply text-left;
+
+  .single & {
+    @apply text-center;
+  }
+}
+
+//// Short Code Module
+.property-slider {
+  @apply pb-90 text-center;
+
+  @media (max-width: 1023px) {
+    @apply pb-45;
+  }
+
+  .btn {
+    @apply mt-45;
+  }
+
+  //  Property Slider
+  .property-slide {
+    @apply p-30 text-left;
+
+    // Thumbnaill
+    .property__thumb {
+      background-position: center !important;
+      background-size: cover !important;
+    }
+
+    p {
+      @apply m-0;
+    }
+  }
+
+  .slick-dots {
+    @apply my-30 text-center p-0;
+
+    button {
+      @apply bg-primary-1;
+    }
+
+    .slick-active {
+      button {
+        @apply bg-primary-2;
+      }
+    }
+  }
+}
+
+// Meta
+//
+.meta_container {
+  @apply py-30 flex justify-start items-start;
+
+  flex-flow: column wrap;
+  min-height: 250px;
+
+  h6 {
+    @apply m-0;
+
+    font-size: 26px;
+  }
+
+  .btn {
+    @apply m-0;
+  }
+}
+
+.property__meta {
+  @apply mb-30;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  span {
+    @apply text-primary-1;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  span:nth-child(2) {
+    &::before {
+      content: "\007C";
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  span:nth-child(3) {
+    &::before {
+      content: "\007C";
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .property__meta span:nth-child(4)::before {
+    content: "\007C";
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Content
+//
+.property__content {
+  @apply mt-30;
+
+  // 1024
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+// Gallery
+//
+.property__gallery {
+  // 1024
+  @media (min-width: 1024px) {
+    @apply w-2/3;
+  }
+}
+
+// Description
+//
+.property__description {
+  @apply mt-1 w-full;
+
+  // 1024
+  @media (min-width: 1024px) {
+    @apply flex justify-between mt-2;
+
+    flex-flow: row wrap;
+  }
+}
+
+// Left
+//
+.property__left {
+  // 1024
+  width: 100%;
+}
+
+// Right
+//
+.property-documents {
+  // 1023 <=
+  @apply mt-1;
+}
+
+// Details
+.property__details {
+  @apply mt-0 pt-1 pl-0 mb-30;
+
+  list-style-type: none;
+  ///// Adjust Border
+}
+
+// Detail
+.property__detail {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  ///// Adjust Border
+  border-bottom: 2px solid black;
+
+  @apply border-primary-3;
+
+  .single-properties & {
+    span:last-child {
+      @apply pl-1;
+
+      text-align: right;
+    }
+  }
+}
+
+// Adjacent Details
+.property__detail + .property__detail {
+  @apply my-1 pt-px;
+}
+
+// Reduced
+.property__reduced {
+  width: 100%;
+}
+
+// Gallery Navigation
+.property__gallery__nav {
+  @apply mt-1;
+
+  // 767 <=
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+// Gallery Item
+.property__gallery__item {
+  outline: none;
+
+  img {
+    display: block;
+    margin: auto;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+}
+
+.property__gallery__large {
+  @apply mb-15;
+}
+
+// next and previous link styling
+.next-post,
+.prev-post,
+.all-posts {
+  @apply text-primary-2 relative;
+
+  &::before,
+  &::after {
+    @apply absolute;
+
+    content: "";
+    top: 7px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+  }
+}
+
+.all-posts {
+  @apply pr-30;
+
+  &::after {
+    right: 0;
+    background-image: url(/app/themes/sage/resources/assets/images/arrow-circle.svg);
+  }
+}
+
+.next-post {
+  @apply pr-30;
+
+  &::after {
+    right: 0;
+    background-image: url(/app/themes/sage/resources/assets/images/arrow-right.svg);
+  }
+}
+
+.prev-post {
+  @apply pl-30;
+
+  &::after {
+    left: 0;
+    background-image: url(/app/themes/sage/resources/assets/images/arrow-left.svg);
+  }
+}
+
+.form--simple {
+  @apply flex justify-end items-center mb-45;
+
+  select {
+    max-width: 200px;
+  }
+
+  .button {
+    @apply ml-15;
+
+    max-width: 125px;
+  }
+}
+
+.result-pagination {
+  @apply block px-15 w-full mt-30;
+
+  .prev {
+    //
+  }
+
+  .next {
+    float: right;
+  }
+}

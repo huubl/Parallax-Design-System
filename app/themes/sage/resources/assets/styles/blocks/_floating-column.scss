@@ -1,0 +1,55 @@
+.section--float {
+  .container {
+    .section__bg {
+      padding-bottom: 0;
+
+      @media (max-width: 1023px) {
+        max-width: 96% !important;
+        width: 100% !important;
+      }
+
+      .fp-bg {
+        @media (max-width: 1023px) {
+          right: 0;
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .content {
+    @apply flex relative z-40;
+
+    flex-flow: column wrap;
+
+    .content--inner {
+      min-height: auto;
+      flex-flow: column wrap;
+
+      @media (max-width: 1023px) {
+        align-items: flex-start !important;
+        margin-top: 60px !important;
+        padding: 15px !important;
+        width: 90% !important;
+
+        .home & {
+          @apply flex justify-center items-center;
+
+          top: 0;
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    a {
+      @apply uppercase;
+
+      &:hover {
+        p,
+        h1 {
+          @apply text-primary-2;
+        }
+      }
+    }
+  }
+}

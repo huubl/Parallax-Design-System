@@ -1,0 +1,35 @@
+.section--testimonials {
+  @apply py-90 px-15;
+
+  .container {
+    padding: 45px 200px;
+
+    @media (max-width: 1023px) {
+      @apply px-15;
+    }
+
+    .slick-arrow {
+      top: 30%;
+
+      svg {
+        @apply text-primary-1;
+      }
+    }
+
+    .prev {
+      left: -90px;
+    }
+
+    .next {
+      right: -90px;
+    }
+
+    span p {
+      font-size: 28px;
+    }
+
+    .source__name {
+      font-size: 24px;
+    }
+  }
+}

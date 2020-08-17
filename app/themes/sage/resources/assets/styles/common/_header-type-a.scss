@@ -1,0 +1,254 @@
+
+
+.header-a {
+  @apply bg-primary-3;
+
+  margin-top: 0;
+  transition: all ease 1s;
+  z-index: 100;
+
+  .home & {
+    position: fixed !important;
+  }
+
+  .page & {
+    position: relative !important;
+    margin-top: 0 !important;
+    top: 0 !important;
+  }
+
+  // Wesbite Logo Styling
+  .header__branding {
+    img {
+      @apply block mx-auto;
+
+      max-width: 340px;
+      transition: all ease 1s;
+
+      @media (max-width: 1200px) {
+        @apply ml-0 pl-0;
+
+        max-width: 250px;
+      }
+
+      @media (max-width: 1023px) {
+        max-width: 200px;
+      }
+    }
+  }
+
+  .header__bottom {
+    @apply py-15;
+  }
+
+  // hamburger Icon
+  .w-hamburger {
+    @apply bg-white fixed;
+
+    right: 15px;
+    top: 25px;
+    z-index: 200;
+
+    .nav-is-open & {
+      @apply bg-transparent;
+    }
+  }
+
+  .nav-toggle {
+    span {
+      @apply bg-primary-1;
+
+      &::before,
+      &::after {
+        @apply bg-primary-1;
+
+        .nav-is-open & {
+          opacity: 1;
+
+          @apply bg-white;
+        }
+      }
+    }
+  }
+
+  .current_page_item,
+  .single-capital-portfolio & .menu-item-274 {
+    position: relative;
+
+    &::after {
+      @apply bg-primary-2 block mx-auto;
+
+      content: "";
+      width: 90%;
+      height: 6px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: -15px;
+
+      @media (max-width: 1023px) {
+        @apply hidden;
+      }
+    }
+  }
+
+  // Nav Mobile
+  nav {
+    @apply flex flex-row items-center;
+
+    z-index: 100;
+
+    // 1023 <=
+    @media (max-width: 1023px) {
+      @apply hidden;
+
+      // Navigation Open
+      .nav-is-open & {
+        @apply flex justify-center items-start px-30 absolute w-full bg-primary-1;
+
+        flex-flow: column wrap;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        margin-top: -15px;
+
+        a {
+          @apply uppercase leading-normal text-white font-d-bold;
+
+          span {
+            @apply pl-2 font-d-bold;
+          }
+        }
+
+        .mobile-portal {
+          position: relative;
+
+          a {
+            font-size: 22px;
+          }
+
+          &::before {
+            @apply bg-primary-2;
+
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            left: 0;
+            top: -15px;
+            z-index: 10;
+          }
+        }
+      }
+    }
+
+    .primary-nav-a {
+      @media (min-width: 1024px) {
+        @apply flex justify-end items-center mt-0;
+      }
+    }
+
+    li {
+      @media (min-width: 1024px) {
+        @apply ml-15 py-2;
+      }
+
+      @media (max-width: 1023px) {
+        @apply mt-2;
+      }
+
+      a {
+        @apply uppercase leading-normal text-primary-1 font-d-bold;
+
+        font-size: 16px;
+
+        @media (max-width: 1023px) {
+          @apply text-white;
+
+          font-size: 38px;
+        }
+      }
+    }
+
+    .menu-item-273 a,
+    .menu-item-494 a {
+      @apply uppercase font-d-din;
+
+      @media (max-width: 1023px) {
+        @apply hidden;
+      }
+    }
+
+    // sub-menu Background Color control
+    .sub-menu {
+      @apply bg-white;
+
+      @media (max-width: 1023px) {
+        @apply bg-transparent;
+      }
+
+      li {
+        @apply py-2;
+      }
+
+      @media (min-width: 1024px) {
+        left: -15px !important;
+      }
+
+      a {
+        @apply capitalize;
+      }
+
+      .current_page_item::after {
+        display: none;
+      }
+    }
+
+    [data-state="open"] .sub-menu {
+      @apply p-0 m-0;
+    }
+  }
+
+  // Phone Number & CTA
+  .header__top {
+    .container {
+      @apply flex justify-end items-center;
+
+      flex-flow: row wrap;
+
+      @media (max-width: 1023px) {
+        justify-content: space-between;
+      }
+
+      a {
+        span,
+        svg {
+          @apply ml-2 font-d-bold;
+        }
+
+        @media (min-width: 1024px) {
+          @apply ml-30 text-white;
+        }
+      }
+
+      h6 {
+        @apply m-0;
+      }
+    }
+  }
+
+  // Fixed Property
+  #header-fixed & {
+    @apply fixed w-full;
+
+    margin-top: 0;
+    top: 0;
+  }
+}
+
+#header-fixed {
+  // Scrool behavior
+  .scroll-head--a {
+    //
+  }
+}

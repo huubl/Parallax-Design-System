@@ -1,0 +1,102 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-15 text-primary-2;
+
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+h1 {
+  @apply text-h1_m text-primary-1 font-d-bold uppercase;
+  // 1024
+  @media (min-width: 1024px) {
+    @apply text-h1;
+  }
+
+  a & {
+    &:hover {
+      @apply text-primary-2;
+    }
+  }
+}
+
+h2 {
+  @apply text-h2_m text-primary-1 font-d-bold;
+
+  @media (min-width: 1024px) {
+    @apply text-h2;
+  }
+}
+
+h3 {
+  @apply text-h3 text-primary-1 font-d-Italic;
+}
+
+h4 {
+  @apply text-h4 text-primary-1 font-d-bold;
+}
+
+h5 {
+  @apply text-h5 text-primary-1 font-d-bold uppercase;
+}
+
+h6 {
+  @apply text-h6 text-primary-1 font-d-bold uppercase;
+}
+
+p,
+ul:not([class]) {
+  @apply mb-15 text-p text-primary-1 font-d-din;
+
+  line-height: 28px;
+
+  &:last-child {
+    @apply mb-0;
+  }
+
+  .section-brm--hero & {
+    @apply text-hero_p;
+  }
+}
+
+b,
+strong,
+span {
+  @apply font-d-bold;
+}
+
+a {
+  @apply text-primary-1 font-d-din;
+
+  &:hover {
+    color: #ad561d !important;
+
+    .investor--contact &,
+    .section--invest & {
+      color: white !important;
+    }
+  }
+}
+
+small,
+.small-style {
+  @apply text-primary-1 text-small leading-normal block mb-2 font-d-din;
+}
+
+.border-top {
+  @apply relative mt-30;
+
+  &::before {
+    @apply absolute bg-primary-2;
+
+    content: "";
+    top: -30px;
+    left: 0;
+    width: 90px;
+    height: 6px;
+  }
+}

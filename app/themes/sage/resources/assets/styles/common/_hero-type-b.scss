@@ -1,0 +1,57 @@
+.section-brm--hero {
+  @apply w-full flex justify-start items-center;
+
+  overflow: hidden;
+  height: 100vh;
+
+  .hero__video {
+    @apply w-full absolute block mx-auto pl-135;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    filter: brightness(100%);
+
+    @media (max-width: 1023px) {
+      @apply pl-6;
+    }
+
+    .active & {
+      -webkit-animation: vid-bright 2s 1;
+    }
+  }
+
+  @-webkit-keyframes vid-bright {
+    0% {
+      filter: brightness(30%);
+    }
+
+    100% {
+      filter: brightness(100%);
+    }
+  }
+
+  .hero_content {
+    @apply relative;
+
+    z-index: 10;
+
+    @media (max-width: 1023px) {
+      min-height: auto !important;
+    }
+
+    .hero_content--container {
+      @apply px-60 py-120;
+
+      @media (max-width: 1023px) {
+        @apply px-30;
+      }
+    }
+  }
+}

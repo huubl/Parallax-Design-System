@@ -1,0 +1,18 @@
+.section--partnership {
+  .container {
+    @apply flex justify-center items-center;
+
+    flex-flow: row wrap;
+
+    .partnership__image {
+      @apply bg-contain bg-no-repeat bg-center my-5 mx-15;
+
+      height: 50px;
+      width: 150px;
+
+      @media (max-width: 1023px) {
+        width: 120px;
+      }
+    }
+  }
+}

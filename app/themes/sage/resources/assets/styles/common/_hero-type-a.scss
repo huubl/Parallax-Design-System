@@ -1,0 +1,29 @@
+.section-brm--hero {
+  @apply bg-cover bg-right;
+
+  @media (max-width: 1023px) {
+    background-position: 75%;
+    min-height: 350px !important;
+
+    .home & {
+      padding: 30px 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .button {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+  }
+
+  .slick-dots {
+    @apply relative text-center;
+
+    margin-top: -45px;
+
+    @media (min-width: 1024px) {
+      margin-top: -75px;
+    }
+  }
+}

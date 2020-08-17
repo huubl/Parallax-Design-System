@@ -1,0 +1,130 @@
+.singular--portfolio {
+  .hero__image--container {
+    @apply flex justify-start items-start;
+
+    flex-flow: row wrap;
+    min-height: 600px;
+
+    .hero__image {
+      @apply absolute;
+
+      min-height: 730px;
+      width: 90%;
+      left: 15px;
+      top: 0;
+
+      .investor__login {
+        @apply absolute uppercase text-white font-d-Italic;
+
+        bottom: 45px;
+        left: 75px;
+        font-size: 16px;
+
+        @media (max-width: 1023px) {
+          bottom: auto;
+          top: 275px;
+          left: 25px;
+        }
+
+        img {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .content--inner {
+    @apply p-60 w-1/2 relative block mx-auto ml-0 z-40;
+
+    margin-top: 250px;
+
+    @media (max-width: 1023px) {
+      @apply p-15 w-full mt-90;
+    }
+  }
+
+  .float-content {
+    @apply w-1/2 relative z-40 bg-white p-45;
+
+    @media (max-width: 1023px) {
+      @apply block mx-auto mr-0;
+
+      width: 95%;
+      left: auto;
+    }
+
+    .member--image {
+      @apply w-full mb-30 bg-cover bg-center;
+
+      padding-bottom: 50%;
+    }
+
+    .gallery__carousel {
+      .gallery__image {
+        @apply w-full;
+
+        height: 300px;
+      }
+    }
+
+    .slick-dots {
+      @apply text-right;
+    }
+  }
+
+  .slick-arrow {
+    top: auto;
+    bottom: -30px;
+
+    svg {
+      font-size: 16px;
+      color: black;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .prev {
+    right: 45px;
+    left: auto;
+  }
+}
+
+.section--portfolio {
+  .container {
+    .content {
+      //
+    }
+  }
+
+  .portfolio--container {
+    .container {
+      @apply flex justify-start items-start px-0;
+
+      flex-flow: row wrap;
+
+      .portfolio--listing {
+        @apply w-1/2 px-15;
+
+        @media (max-width: 1023px) {
+          @apply w-full;
+        }
+
+        .column-member-img {
+          .member--image {
+            padding-bottom: 50%;
+          }
+        }
+      }
+
+      .column-content {
+        @apply bg-white block mx-auto p-45;
+
+        width: 90%;
+        margin-top: -30px;
+      }
+    }
+  }
+}

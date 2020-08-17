@@ -1,0 +1,57 @@
+/**
+ * Print Stylesheet
+* @version         1.0
+*/
+
+@media print {
+  * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
+
+  h2 {
+    display: inline-block !important;
+  }
+
+  p:first-child {
+    float: right !important;
+  }
+
+  strong {
+    font-weight: 600 !important;
+  }
+
+  table {
+    display: table !important;
+    border-spacing: 2px !important;
+    border: solid 1px #ccc !important;
+    padding: 2px !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  thead th,
+  tbody td {
+    padding: 5px 10px !important;
+    text-align: left !important;
+  }
+
+  thead th {
+    font-weight: 600 !important;
+  }
+
+  tr {
+    display: table-row !important;
+  }
+
+  tr:nth-of-type(odd) {
+    background-color: #eee !important;
+  }
+
+  th,
+  td {
+    display: table-cell !important;
+    font-size: 44px !important;
+  }
+}

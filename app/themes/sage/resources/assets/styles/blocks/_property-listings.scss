@@ -1,0 +1,39 @@
+.property__listings {
+  .property--container {
+    @apply flex items-start justify-start;
+
+    flex-flow: row wrap;
+
+    .property--item {
+      @apply mb-30 px-15;
+
+      width: 33.3333%;
+
+      @media (max-width: 1023px) {
+        width: 50%;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .column-property-img {
+        @apply mb-15;
+
+        .property--image {
+          @apply bg-cover bg-center;
+
+          min-height: 300px;
+
+          @media (max-width: 768px) {
+            min-height: 250px;
+          }
+        }
+      }
+
+      .column-content {
+        //
+      }
+    }
+  }
+}

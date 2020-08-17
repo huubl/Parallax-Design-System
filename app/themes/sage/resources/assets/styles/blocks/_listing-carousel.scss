@@ -1,0 +1,60 @@
+///
+// Featured Property Carousel
+////
+
+.featured--carousel {
+  .js-listing--slider {
+    padding: 0 45px;
+
+    .slick-arrow {
+      top: 35% !important;
+
+      svg {
+        color: #474747 !important;
+      }
+    }
+  }
+}
+
+.section--carousel,
+.featured--carousel {
+  .container {
+    @apply px-0;
+
+    .slick-slider {
+      .slick-list {
+        .brm-featured--item {
+          @apply px-15;
+
+          .column-featured-img {
+            .carousel-featured--image {
+              @apply w-full bg-cover bg-center mb-15;
+
+              padding-bottom: 75%;
+            }
+          }
+
+          .column-content {
+            @apply w-full;
+          }
+        }
+      }
+
+      .slick-arrow {
+        top: 45%;
+
+        svg {
+          @apply text-white;
+        }
+
+        .prev {
+          left: 0;
+        }
+
+        .next {
+          right: 0;
+        }
+      }
+    }
+  }
+}

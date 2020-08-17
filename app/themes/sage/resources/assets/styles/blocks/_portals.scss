@@ -1,0 +1,221 @@
+.design_3 {
+  .hover--state {
+    @apply block m-auto;
+
+    opacity: 1 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 50% !important;
+    min-width: 193px;
+    height: 30% !important;
+    background-color: linear-gradient(135deg, #000 0%, #000 15%, #4e5b74 50%, #4e5b74 75%, #000 150%);
+    background-size: 500%;
+    background-position: center;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+
+    @media (max-width: 1023px) {
+      display: flex !important;
+      position: relative !important;
+      width: 100% !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      background-color: white;
+    }
+
+    .portal__a_c {
+      @apply block uppercase;
+
+      position: absolute !important;
+      line-height: 1;
+      transition: ease all 1s;
+      width: 150px;
+
+      @media (min-width: 1024px) {
+        @apply text-white;
+      }
+
+      @media (max-width: 1023px) {
+        @apply mb-15;
+
+        position: relative !important;
+        width: auto;
+      }
+    }
+  }
+
+  .hover__content {
+    font-size: 0;
+    transform: scale(0);
+    transition: ease all 1s;
+
+    @media (min-width: 1024px) {
+      a,
+      p {
+        @apply text-white;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      opacity: 1 !important;
+      display: block !important;
+      font-size: inherit;
+      transform: scale(1);
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  &:hover {
+    @media (min-width: 1024px) {
+      .hover--state {
+        width: 90% !important;
+        height: 90% !important;
+        background-position: 100% 100%;
+
+        .hover__content {
+          font-size: inherit;
+          height: auto;
+          transform: scale(1);
+          position: relative;
+        }
+
+        .portal__a_c {
+          line-height: 15;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.design-4 {
+  .hover--state {
+    @media (max-width: 1023px) {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  .hover__content {
+    @apply flex justify-center items-center flex-col mx-auto w-full h-full p-15;
+
+    transform: scale(1);
+    opacity: 0;
+    transition: all ease 1s;
+    pointer-events: none;
+    position: absolute;
+    bottom: -50px;
+
+    @media (max-width: 1023px) {
+      @apply relative bg-white block items-start text-left p-0;
+
+      opacity: 1;
+      bottom: 0;
+      pointer-events: all;
+    }
+  }
+
+  &:hover {
+    @media (min-width: 1024px) {
+      .hover--state {
+        opacity: 0 !important;
+        width: 50% !important;
+        height: 30% !important;
+
+        .portal__a_c {
+          display: none;
+        }
+      }
+
+      .hover__content {
+        @apply flex justify-center bg-primary-2;
+
+        font-size: inherit;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        height: 100%;
+        z-index: 10;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.section--portals {
+  .portal-hover--container {
+    @apply relative mb-15;
+
+    overflow: hidden;
+    height: 300px;
+
+    @media (max-width: 1023px) {
+      height: auto;
+      background-image: none !important;
+    }
+
+    .hover--state {
+      @apply absolute h-full w-full text-white p-15 text-center flex justify-center items-center;
+
+      background-color: rgba(#4e5b74, 1);
+      flex-flow: column wrap;
+      z-index: 10;
+      top: 60%;
+      left: 0;
+      opacity: 0;
+      transition: all ease 1s;
+
+      @media (max-width: 1023px) {
+        @apply px-0;
+
+        background-color: white;
+        display: none;
+      }
+
+      p {
+        @apply mb-15;
+      }
+    }
+
+    &:hover {
+      .hover--state {
+        top: 0;
+        opacity: 1;
+      }
+    }
+  }
+
+  img {
+    @apply block mx-auto w-auto;
+  }
+
+  .brm-portals {
+    @apply flex justify-start items-start;
+
+    flex-flow: row wrap;
+
+    .portal {
+      @apply px-15 mb-30;
+
+      @media (max-width: 1023px) {
+        @apply w-1/2;
+      }
+
+      @media (max-width: 1023px) {
+        @apply w-full p-0 p-0;
+      }
+
+      .button--arrow {
+        @media (min-width: 1024px) {
+          &::after {
+            filter: brightness(1000%);
+          }
+        }
+      }
+    }
+  }
+}

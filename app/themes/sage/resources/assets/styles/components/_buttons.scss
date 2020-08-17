@@ -1,0 +1,35 @@
+.button {
+  @apply inline-block py-2 px-30 uppercase text-p text-white font-d-din;
+
+  img {
+    @apply inline-block w-auto;
+  }
+}
+
+.button--primary {
+  @apply border-1 border-primary-1 relative bg-white text-primary-1;
+
+  // Hover
+  @media (hover: hover) {
+    &:hover {
+      @apply bg-primary-2;
+
+      color: white !important;
+
+      img {
+        filter: brightness(10000%);
+      }
+    }
+  }
+}
+
+.button--secondary,
+.gform_button {
+  @apply border-2 border-primary-2 relative bg-primary-2;
+  // Hover
+  @media (hover: hover) {
+    &:hover {
+      @apply text-white bg-primary-1 border-primary-1;
+    }
+  }
+}

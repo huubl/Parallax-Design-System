@@ -1,0 +1,26 @@
+.card-content {
+  // Inner
+  .content--inner {
+    @apply px-15 py-45;
+
+    @media (min-width: 1024px) {
+      @apply block mx-auto mr-0 pl-15 pr-45;
+
+      max-width: 720px;
+
+      // When columns are reversed Important Rule placed to overide.
+      .flex-col-reverse & {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        padding-right: 15px !important;
+        padding-left: 45px !important;
+      }
+    }
+  }
+}
+
+.card-image {
+  @media (max-width: 1023px) {
+    padding-bottom: 50%;
+  }
+}

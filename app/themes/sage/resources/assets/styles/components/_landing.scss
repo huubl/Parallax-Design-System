@@ -1,0 +1,19 @@
+.page-template-template-landing {
+  #menu-nav-header-type-a,
+  #menu-footer-type-a {
+    li {
+      @apply hidden;
+
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        @apply block;
+      }
+    }
+  }
+
+  // Social Icons
+  .social-icon,
+  .w-hamburger {
+    @apply hidden;
+  }
+}

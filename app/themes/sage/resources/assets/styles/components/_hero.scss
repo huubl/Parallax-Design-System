@@ -1,0 +1,93 @@
+.brm-hero {
+  .w-ful {
+    @apply px-15;
+  }
+
+  .slick-list {
+    @apply w-full;
+  }
+}
+
+.section-brm--hero {
+  .home &,
+  .wp-core-ui & {
+    .container {
+      @apply px-15;
+    }
+
+    // Fixed Header
+    #header-fixed & {
+      @apply mt-60;
+
+      @media (min-width: 1024px) {
+        @apply mt-105;
+      }
+    }
+  }
+
+  .hero_content {
+    @apply flex items-center bg-cover bg-right;
+
+    height: auto;
+
+    @media (max-width: 1023px) {
+      @apply px-0;
+    }
+
+    h1 {
+      @apply mb-15 uppercase;
+    }
+  }
+
+  .hero_content--container {
+    @apply block mx-auto;
+  }
+
+  .ml-0 {
+    .hero_content--container {
+      @apply mr-0 pl-15;
+
+      max-width: 720px;
+
+      @media (max-width: 1023px) {
+        max-width: 100%;
+
+        img {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .mr-0 {
+    transform: rotateY(180deg);
+
+    .hero_content--container {
+      @apply mr-0 text-right;
+
+      transform: rotateY(180deg);
+      max-width: 750px;
+
+      @media (max-width: 1023px) {
+        @apply text-left;
+      }
+
+      img {
+        display: inline-block;
+        float: right;
+        margin-left: 15px;
+        margin-right: 0;
+
+        @media (max-width: 1023px) {
+          float: left;
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+//// Logged In
+.help__login {
+  .user__nav {
+    a,
+    p {
+      @apply uppercase;
+
+      font-size: 14px;
+    }
+  }
+}
+
+.section--investments {
+  .fp-bg {
+    .page-id-553 & {
+      min-height: 1200px;
+    }
+
+    .page-id-556 & {
+      min-height: 800px;
+    }
+  }
+
+  .investor--contact {
+    @media (max-width: 1350px) {
+      @apply w-full;
+    }
+
+    form {
+      @apply mt-30;
+
+      input,
+      textarea {
+        @apply border-white bg-transparent text-white;
+
+        &::placeholder {
+          @apply text-white;
+        }
+      }
+    }
+
+    a {
+      @apply font-d-din;
+
+      font-size: 16px;
+
+      img {
+        width: 20px;
+        height: auto;
+      }
+    }
+
+    label {
+      display: none !important;
+    }
+  }
+
+  .container--invest {
+    .fp-bg {
+      @apply absolute w-full h-full bg-white;
+
+      max-width: 90%;
+      max-height: 85vh;
+      background-image: none;
+      left: 0;
+      top: 0;
+
+      @media (max-width: 1350px) {
+        max-width: 98%;
+      }
+    }
+
+    .investments--listings {
+      overflow: scroll;
+
+      @media (max-width: 1350px) {
+        @apply w-full;
+      }
+
+      .user__nav {
+        @apply font-d-din uppercase border-b-1 border-primary-1 pb-15;
+
+        @media (max-width: 1023px) {
+          font-size: 14px;
+        }
+
+        a {
+          @apply font-d-din;
+        }
+      }
+
+      .table__listings {
+        min-width: 800px;
+
+        .page-id-553 &,
+        .page-id-556 & {
+          min-width: 100%;
+        }
+
+        .table__header {
+          //
+        }
+
+        .table__body {
+          a {
+            @apply font-d-din;
+          }
+
+          &:hover {
+            @apply bg-primary-3;
+          }
+        }
+      }
+
+      .page-id-556 & {
+        overflow: visible;
+
+        form {
+          @apply ml-0;
+
+          max-width: 400px;
+        }
+      }
+    }
+  }
+}
+
+.section--invest {
+  .container {
+    .section__bg {
+      @apply flex items-center mx-auto mr-0;
+
+      width: 92%;
+
+      .fp-bg {
+        @apply absolute w-full h-full bg-center;
+
+        object-fit: cover;
+      }
+
+      .content {
+        @apply w-full mt-75;
+
+        max-width: 520px;
+        margin-left: -110px;
+
+        @media (max-width: 1023px) {
+          @apply mt-120;
+
+          margin-left: -38px;
+        }
+
+        .content--inner {
+          @apply p-60;
+
+          #loginform {
+            .gform_body {
+              @apply mb-15;
+
+              input {
+                @apply w-full border-white border-1 bg-transparent text-white;
+
+                height: 45px;
+                padding: 0 15px;
+
+                &::placeholder {
+                  @apply text-white;
+                }
+              }
+            }
+
+            .gform_button {
+              @apply border-white text-white;
+
+              &:hover {
+                @apply text-primary-1;
+              }
+            }
+
+            label {
+              display: none;
+            }
+          }
+
+          a {
+            @apply mt-15 text-white;
+          }
+        }
+      }
+    }
+  }
+}

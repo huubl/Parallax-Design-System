@@ -1,0 +1,242 @@
+//// Header Type B
+///
+//
+.header-b {
+  @apply py-15 relative;
+
+  transition: all ease 1s;
+  z-index: 500;
+
+  // Header Bottom
+  .header__bottom {
+    @apply pt-15;
+
+    @media (max-width: 1023px) {
+      @apply flex justify-between items-center pt-0;
+
+      .mobile--tele {
+        @apply flex items-center mt-15;
+
+        .nav-is-open & {
+          @apply ml-0 mt-15 w-full;
+
+          span {
+            @apply block;
+
+            font-size: 24px;
+          }
+        }
+      }
+
+      .button {
+        .nav-is-open & {
+          @apply block m-0 mt-15;
+        }
+      }
+    }
+
+    // HEader Nav Open
+    .nav-is-open & {
+      @apply fixed items-start p-15 w-full bg-primary-2;
+
+      height: 100vh;
+      z-index: 50;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  // Branding Logo
+  .header__branding {
+    width: 20%;
+    transition: all ease 1s;
+    margin-bottom: -100px;
+    margin-top: -45px;
+
+    img {
+      @apply mx-auto block;
+
+      max-width: 145px;
+    }
+
+    @media (max-width: 1023px) {
+      @apply w-auto my-0;
+
+      max-width: 100px;
+    }
+
+    .nav-is-open & {
+      @apply hidden;
+    }
+  }
+
+  // Main Nav Controller
+  nav {
+    @apply w-full flex justify-between items-end;
+
+    flex-flow: row wrap;
+
+    @media (max-width: 1023px) {
+      @apply items-start;
+    }
+
+    // Inner Nav Controller
+    .nav {
+      width: 40%;
+
+      @media (max-width: 1023px) {
+        @apply w-full flex justify-between items-end;
+
+        flex-flow: row wrap;
+
+        .nav-is-open & {
+          @apply justify-start items-start;
+
+          flex-flow: column wrap;
+        }
+      }
+    }
+
+    .nav--right,
+    .nav--left {
+      @apply flex items-center;
+
+      flex-flow: row wrap;
+
+      @media (max-width: 1023px) {
+        @apply hidden;
+
+        .nav-is-open & {
+          @apply flex;
+        }
+      }
+
+      a {
+        @apply uppercase;
+
+        font-size: 16px;
+
+        @media (max-width: 1200px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 1023px) {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .sub-menu {
+      @apply bg-white p-0 m-0;
+
+      a {
+        @apply capitalize;
+
+        @media (min-width: 1024px) {
+          @apply px-15;
+
+          margin: 0 !important;
+        }
+      }
+    }
+
+    .nav--right {
+      @apply justify-end;
+
+      .sub-menu {
+        left: 15px;
+      }
+
+      a {
+        @media (min-width: 1200px) {
+          @apply ml-30;
+        }
+
+        @media (min-width: 1024px) {
+          @apply ml-15;
+        }
+      }
+    }
+
+    .nav--left {
+      .sub-menu {
+        left: -15px;
+      }
+
+      a {
+        @media (min-width: 1200px) {
+          @apply mr-30;
+        }
+
+        @media (min-width: 1024px) {
+          @apply mr-15;
+        }
+      }
+    }
+  }
+
+  // Mobile Contact and direction
+  .col--right {
+    @apply flex;
+
+    .nav-is-open & {
+      @apply block w-full;
+    }
+  }
+
+  // hamburger Icon
+  .w-hamburger {
+    @apply bg-primary-1 mt-30;
+
+    .nav-is-open & {
+      @apply bg-primary-2 mb-30;
+    }
+  }
+
+  .nav-toggle {
+    span {
+      &::before,
+      &::after {
+        @apply bg-primary-1;
+
+        .nav-is-open & {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Nav Mobile
+  #menu-nav-type-b-left.nav,
+  #menu-nav-type-b-right.nav {
+    @media (max-width: 1023px) {
+      @apply hidden;
+
+      .nav-is-open & {
+        @apply block;
+      }
+    }
+  }
+
+  // Fixed Property
+  #header-fixed & {
+    @apply fixed w-full;
+
+    margin-top: 0;
+    top: 0;
+  }
+}
+
+#header-fixed {
+  // Scrool behavior
+  .scroll-head--b {
+    @media (min-width: 1024px) {
+      margin-top: -60px !important;
+
+      .header__branding {
+        width: 15%;
+        margin-top: 15px;
+      }
+    }
+  }
+}

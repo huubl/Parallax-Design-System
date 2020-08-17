@@ -1,0 +1,39 @@
+.footer-c {
+  .footer_nav {
+    @apply flex justify-center items-center;
+
+    list-style: none;
+
+    @media (max-width: 1023px) {
+      @apply justify-center;
+
+      flex-flow: column wrap;
+    }
+
+    li {
+      @apply px-15;
+
+      .sub-menu {
+        @apply hidden;
+      }
+    }
+
+    .menu-item-has-children > a::after {
+      display: none;
+    }
+  }
+
+  .footer_branding {
+    img {
+      @apply block mx-auto mt-45;
+    }
+  }
+
+  .copyright {
+    span,
+    a {
+      color: #a1a1a1;
+      font-size: 12px;
+    }
+  }
+}

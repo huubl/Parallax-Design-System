@@ -1,0 +1,97 @@
+//// Animations
+/// V.1.0
+//
+@media (min-width: 1024px) {
+  // Fade in
+  .fade {
+    opacity: 0;
+    transition: all ease 1s;
+  }
+
+  //Animate Relative State for all classes
+  .animate-right,
+  .animate-left,
+  .animate-bottom,
+  .animate-top {
+    transition: all ease 2s;
+    position: relative;
+  }
+
+  //Animate Right in
+  .animate-right {
+    right: -50px;
+
+    .active & {
+      right: 0;
+      opacity: 1;
+    }
+  }
+
+  //Animate Left in
+  .animate-left {
+    left: -50px;
+
+    .active & {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  .animate-top {
+    top: -50px;
+
+    .active & {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  .animate-bottom {
+    bottom: -50px;
+
+    .active & {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  //Animate Action
+  .slide-in-right {
+    .active & {
+      right: 0 !important;
+      opacity: 1 !important;
+      transition: all ease 1s;
+
+      &::after {
+        height: 100% !important;
+      }
+
+      &::before {
+        width: 75% !important;
+      }
+    }
+  }
+
+  .slide-in-left {
+    .active & {
+      left: 0 !important;
+      opacity: 1 !important;
+      transition: all ease 1s;
+    }
+  }
+
+  .slide-in-top {
+    .active & {
+      top: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .slide-in-bottom {
+    .active & {
+      bottom: 0 !important;
+      opacity: 1 !important;
+      transition: all ease 1s;
+    }
+  }
+}

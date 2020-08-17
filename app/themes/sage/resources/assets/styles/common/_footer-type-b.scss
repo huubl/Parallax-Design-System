@@ -1,0 +1,57 @@
+.footer-b {
+  .column {
+    @media (max-width: 1023px) {
+      @apply mt-30;
+
+      &:nth-child(1) {
+        display: none;
+      }
+    }
+  }
+
+  .footer_branding img {
+    @apply pr-15;
+  }
+
+  p,
+  a,
+  span {
+    @apply text-primary-3;
+
+    font-size: 18px;
+
+    @media (max-width: 1200px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 1023px) {
+      font-size: 18px;
+    }
+  }
+
+  .button {
+    @apply text-white;
+  }
+
+  address {
+    span {
+      @apply m-0;
+    }
+  }
+
+  .copyright,
+  .copyright span,
+  .copyright a {
+    @apply m-0 text-center;
+
+    font-size: 12px;
+  }
+
+  .copyright {
+    @apply w-full;
+
+    @media (max-width: 1023px) {
+      @apply mt-15 w-3/4;
+    }
+  }
+}

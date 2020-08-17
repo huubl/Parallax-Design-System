@@ -1,0 +1,20 @@
+.brm-featured-listing {
+  @apply flex justify-between items-start px-15;
+
+  flex-flow: row wrap;
+
+  @media (max-width: 767px) {
+    flex-flow: column wrap;
+    margin-top: -90px !important; // Confirms Margin on Mobile only
+  }
+
+  .featured__image {
+    @apply bg-cover bg-center h-full;
+
+    min-height: 450px;
+
+    @media (max-width: 767px) {
+      min-height: 300px;
+    }
+  }
+}

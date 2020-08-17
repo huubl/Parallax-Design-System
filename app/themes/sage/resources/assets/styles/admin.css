@@ -1,0 +1,62 @@
+:root {
+  --white: #ffffff;
+  --primary-1: #ad561d;
+  --primary-2: #0e143d;
+}
+
+body {
+  color: var(--primary-2);
+  background-color: white;
+}
+
+.login h1 a {
+  width: 100%;
+  max-width: 281px;
+  height: 90px;
+  margin-bottom: 0px;
+  background-image: url("/app/uploads/2020/07/1839-capital.svg");
+  background-size: 100%;
+}
+
+.login form {
+  background-color: var(--primary-2);
+  margin-top: 5px;
+  border: 0px;
+}
+
+.login label {
+  color: var(--white);
+}
+
+.login #nav a,
+.login #backtoblog a,
+.privacy-policy-link {
+  font-size: 14px;
+  color: var(--primary-2);
+}
+
+.login #nav a:hover,
+.login #backtoblog a:hover,
+.privacy-policy-link:hover {
+  color: var(--primary-2);
+}
+
+.wp-core-ui .button-primary {
+  text-shadow: none;
+  background-color: var(--primary-1);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wp-core-ui .button-primary:hover {
+  background-color: var(--primary-1);;
+}
+
+.message {
+  color: var(--primary-2);
+}
+
+.privacy-policy-link {
+  text-decoration: none;
+}

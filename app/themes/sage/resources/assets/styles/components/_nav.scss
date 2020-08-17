@@ -1,0 +1,142 @@
+.menu-item {
+  @apply relative;
+}
+
+.menu-item + .menu-item {
+  // 1023 <=
+  @media (max-width: 1023px) {
+    #menu-nav-header-type-a & {
+      @apply mt-3;
+    }
+  }
+}
+
+.menu-item-200 {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.sub-menu {
+  @apply hidden;
+
+  [data-state="open"] & {
+    @apply block mb-3 pl-0 pt-15;
+  }
+
+  // 1024
+  .menu-item:hover & {
+    @media (min-width: 1024px) {
+      @apply block absolute top-100 right-buffer pl-0;
+
+      left: 0;
+      min-width: 275px;
+    }
+  }
+
+  li {
+    padding: 0;
+  }
+}
+
+.nav-toggle {
+  span {
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition-duration: 0.32s;
+
+    &::before,
+    &::after {
+      content: "";
+      transition-duration: 0.32s;
+
+      @apply absolute left-0 right-0 w-full h-1;
+    }
+
+    &::before {
+      top: -10px;
+      transition: top 0.2s ease-in 0.25s, opacity 0.1s ease-in;
+
+      // Navigation Open
+      .nav-is-open & {
+        top: 0;
+        opacity: 0;
+        transition: top 0.2s ease-out, opacity 0.1s ease-out 0.12s;
+      }
+    }
+
+    &::after {
+      bottom: -10px;
+      transition: bottom 0.2s ease-in 0.25s, transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+      // Navigation Open
+      .nav-is-open & {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.2s ease-out, transform 0.32s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+      }
+    }
+
+    // Navigation Open
+    .nav-is-open & {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  }
+}
+
+.nav {
+  @apply pl-0 list-none;
+}
+
+#menu-primary-navigation.nav,
+#menu-footer-navigation.nav {
+  .sub-menu a {
+    @apply capitalize leading-none;
+  }
+
+  // 1024
+  @media (min-width: 1024px) {
+    .footer-b & {
+      @apply flex items-start justify-start ml-0 p-0;
+
+      flex-flow: column wrap;
+    }
+
+    li {
+      .footer-b & {
+        @apply m-0 p-0;
+      }
+
+      @apply pl-15;
+    }
+  }
+}
+
+#menu-pagination-navigation.nav {
+  @apply flex flex-row items-center justify-start mt-10;
+
+  li + li {
+    @apply ml-5;
+  }
+}
+
+// Has Dropdown
+.menu-item-has-children {
+  // 1023 <=
+  @media (max-width: 1023px) {
+    > a {
+      &::after {
+        @apply inline-block text-primary-2 ml-2 font-fontawesome-solid;
+
+        content: "\f078";
+      }
+    }
+
+    &[data-state=open] {
+      > a::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

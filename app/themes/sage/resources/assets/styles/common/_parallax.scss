@@ -1,0 +1,32 @@
+.fp-bg {
+  @apply absolute;
+
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  background-size: 150%;
+  background-position: center;
+  background-image: url("/app/uploads/2020/07/bg-image-960x800.jpg");
+  transition: all ease 3s;
+
+  .active & {
+    background-size: 170%;
+    -webkit-animation: bg-size 3s 1;
+
+    @media (max-width: 1023px) {
+      background-size: 250%;
+    }
+  }
+}
+
+@-webkit-keyframes bg-size-mb {
+  0% {
+    background-size: 100%;
+  }
+
+  100% {
+    background-size: 150%;
+  }
+}

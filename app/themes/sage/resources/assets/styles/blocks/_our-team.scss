@@ -1,0 +1,39 @@
+.section--team {
+  .team--roster {
+    .js-team--slider {
+      .team--members {
+        @apply px-2;
+
+        @media (max-width: 768px) {
+          @apply px-0 pr-30;
+        }
+
+        .column-member-img {
+          .member--image {
+            @apply bg-cover bg-center mb-15;
+
+            padding-bottom: 75%;
+          }
+        }
+
+        .column-content {
+          strong {
+            font-size: 24px;
+          }
+
+          a {
+            @apply block;
+          }
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    top: 30%;
+
+    svg {
+      @apply text-primary-1;
+    }
+  }
+}

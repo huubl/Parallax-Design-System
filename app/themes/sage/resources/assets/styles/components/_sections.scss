@@ -1,0 +1,233 @@
+.section--contained {
+  @apply py-60;
+
+  @media (max-width: 1023px) {
+    padding: 0;
+  }
+}
+
+.section__bg {
+  transition: all ease 3s;
+  filter: brightness(30%);
+
+  .active & {
+    filter: brightness(100%);
+  }
+
+  @media (max-width: 1023px) {
+    padding-bottom: 75%;
+
+    .section--split & {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.section--split {
+  @apply flex justify-between items-center;
+
+  flex-flow: row wrap;
+
+  @media (max-width: 1023px) {
+    flex-flow: column wrap;
+  }
+}
+
+.container {
+  @apply block mx-auto px-15 py-45 relative;
+
+  max-width: 1500px;
+  transition: all ease 1s;
+
+  .header__master & {
+    @apply py-0;
+
+    max-width: 1500px;
+  }
+
+  .active & {
+    @apply py-0;
+  }
+
+  .section--contained & {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+}
+
+.section__content__inner {
+  @apply relative p-45 py-30 pr-15 w-full h-full block mx-auto ml-0;
+
+  max-width: 690px;
+
+  @media (min-width: 1024px) {
+    .home & {
+      min-height: 100vh;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    .home & {
+      h1 {
+        font-size: 36px;
+      }
+    }
+  }
+
+  @media (max-width: 1250px) {
+    .home & {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .two-thirds & {
+    max-width: 1270px;
+  }
+
+  .three-fourth & {
+    max-width: 1270px;
+  }
+
+  .full & {
+    max-width: 100%;
+  }
+
+  @media (max-width: 1023px) {
+    @apply px-15 py-30;
+
+    max-width: 100%;
+
+    .home & {
+      @apply flex justify-center items-center;
+
+      min-height: 70vh;
+    }
+  }
+
+  .flip & {
+    @apply block mx-auto mr-0 p-30 pl-15;
+  }
+}
+
+.section--full {
+  .home & {
+    img {
+      @apply mb-15;
+    }
+
+    h4 {
+      @apply mb-30;
+    }
+  }
+}
+
+// Includes additional padding for Sections with an Acition
+
+.has-action {
+  @apply py-32;
+}
+
+// Flip Order of split or contained content
+
+.section__content {
+  @media (max-width: 1023px) {
+    @apply pl-0;
+
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    left: auto !important;
+    right: auto !important;
+
+    .section--split & {
+      @apply absolute z-40 w-3/4;
+
+      padding: 0 !important;
+      bottom: 0 !important;
+      margin-bottom: -30px;
+      right: 0 !important;
+    }
+  }
+}
+
+.flip {
+  .section__content {
+    order: 1;
+
+    @apply pr-30 pl-0;
+
+    @media (max-width: 1023px) {
+      @apply pr-0;
+    }
+  }
+
+  .section__bg,
+  .slider--images {
+    @apply bg-top;
+
+    order: 2;
+  }
+}
+
+.normal {
+  @media (max-width: 1023px) {
+    .section__content {
+      order: 1;
+    }
+
+    .section__bg {
+      order: 2;
+    }
+  }
+}
+
+// Rows Styling
+.row {
+  @apply mt-30;
+
+  flex-flow: row wrap;
+
+  .column {
+    @media (max-width: 1023px) {
+      @apply w-full;
+    }
+  }
+}
+
+// Social Media
+.social-icon {
+  @media (min-width: 768px) {
+    @apply mr-15;
+  }
+
+  svg {
+    @apply h-icon w-icon;
+
+    fill: #1a3f1c;
+  }
+}
+
+@media (min-width: 768px) {
+  @apply mr-30;
+
+  .edit-post-visual-editor .editor-post-title,
+  .edit-post-visual-editor .editor-block-list__block {
+    max-width: 1100px;
+  }
+}
+
+.slide--image {
+  @apply bg-cover bg-center;
+
+  padding-bottom: 25%;
+}
+
+.border-style-right,
+.border-style-left {
+  //
+}

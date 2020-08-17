@@ -1,0 +1,306 @@
+// Custom Gravity Forms styling
+label {
+  @apply font-d-bold capitalize;
+}
+
+.user__info {
+  @apply pb-30;
+
+  input,
+  select,
+  textarea {
+    @apply border-1 border-primary-1 px-2 py-2 w-full;
+
+    max-width: 550px;
+
+    &::placeholder {
+      @apply text-primary-1;
+    }
+  }
+
+  .button {
+    @apply w-auto px-30;
+  }
+
+  hr {
+    @apply my-30;
+  }
+
+  label {
+    display: none;
+  }
+}
+// Description
+.gform_description {
+  @apply block mb-10;
+}
+
+// Fields
+.gform_fields {
+  @apply pl-0 list-none;
+
+  // 1024
+  @media (min-width: 1024px) {
+    @apply flex flex-wrap justify-start;
+
+    flex-flow: column wrap;
+  }
+
+  &::after {
+    @apply table;
+
+    content: "";
+    clear: both;
+  }
+}
+
+// Field
+.gfield {
+  @apply relative m-0 overflow-hidden;
+
+  select {
+    @apply rounded-none appearance-none;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply bg-white border-1 border-primary-1 h-45 text-primary-1;
+
+    width: 100% !important;
+
+    .investor--contact & {
+      @apply bg-transparent;
+    }
+
+    &::placeholder {
+      @apply text-primary-1 uppercase;
+    }
+  }
+}
+
+// Label
+.gfield_label {
+  @apply hidden mb-0;
+
+  font-size: 20px !important;
+  display: none !important;
+
+  .hidden_label & {
+    @apply hidden;
+  }
+}
+
+// Right & Left Half
+.gf_left_half,
+.gf_right_half {
+  @apply w-full;
+
+  // 1024
+  @media (min-width: 1024px) {
+    width: calc(50% - 15px);
+  }
+}
+
+// Clear
+.gf_clear {
+  @apply w-full;
+
+  clear: both;
+}
+
+// Select Container
+.gfield_select {
+  @apply bg-no-repeat bg-contain;
+
+  background-position: calc(100% - 15px) center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z'/%3E%3C/svg%3E");
+  background-size: 15px;
+}
+
+// Date Container
+.ginput_container_date {
+  @apply relative;
+
+  cursor: pointer;
+
+  &::after {
+    @apply block absolute bg-contain bg-center;
+
+    pointer-events: none;
+    content: "";
+    top: 8px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/app/themes/sage/resources/assets/images/calendar-icon-blue.png);
+  }
+}
+
+.ui-datepicker-next,
+.ui-datepicker-prev {
+  line-height: 0 !important;
+  background-image: none !important;
+}
+
+// Body
+.gform_body {
+  &::after {
+    @apply table;
+
+    content: "";
+    clear: both;
+  }
+}
+
+.ui-datepicker {
+  width: 250px !important;
+
+  .ui-datepicker-title {
+    @apply m-0;
+
+    select {
+      color: white !important;
+    }
+  }
+
+  span {
+    color: white;
+  }
+
+  .ui-datepicker-next,
+  .ui-datepicker-prev {
+    height: auto;
+    width: auto;
+  }
+}
+
+.ui-datepicker-calendar {
+  span {
+    color: black;
+  }
+}
+
+// Footer
+.gform_footer {
+  @apply mt-5 relative;
+
+  clear: both;
+  margin: 0 !important;
+  display: table !important;
+  width: auto !important;
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background-image: url(/app/themes/sage/resources/assets/images/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @media (max-width: 1023px) {
+      right: 15px;
+      top: 34px;
+    }
+
+    .investor--contact & {
+      background-image: url(/app/themes/sage/resources/assets/images/arrow-right.svg);
+    }
+
+    .section--invest & {
+      top: 15px;
+      right: 15px;
+      background-image: url(/app/themes/sage/resources/assets/images/arrow-right.svg);
+    }
+  }
+
+  &:hover {
+    &::after {
+      background-image: url(/app/themes/sage/resources/assets/images/arrow-right-grey.svg);
+    }
+  }
+}
+
+// Button
+.gform_button {
+  @apply button w-auto bg-transparent border-1 border-primary-1 text-primary-1 pr-45;
+
+  // Hover State
+  @media (hover: hover) {
+    &:hover {
+      @apply bg-primary-2 text-white border-primary-2;
+
+      .investor--contact & {
+        @apply border-white text-primary-2 bg-white;
+      }
+
+      .section--invest & {
+        @apply border-primary-5;
+      }
+    }
+  }
+
+  cursor: pointer;
+}
+
+// Required
+.gfield_required {
+  @apply inline-block ml-px text-red-500;
+}
+
+// Messages
+.validation_error,
+.gform_confirmation_message {
+  @apply mb-5 p-5 text-lg text-white;
+}
+
+// Success
+.gform_confirmation_message {
+  @apply bg-green-500;
+}
+
+// Error
+.validation_error {
+  @apply bg-red-600;
+}
+
+.validation_message {
+  @apply w-full mt-2 p-2 text-sm leading-none text-white bg-red-600;
+
+  clear: both;
+}
+
+// Honeypot
+.gform_validation_container {
+  @apply hidden;
+}
+
+// Name
+.ginput_container_name {
+  span {
+    @apply w-full;
+
+    // 1024
+    @media (min-width: 1024px) {
+      width: calc(50% - 10px);
+    }
+  }
+
+  span:first-child {
+    // 1024
+    @media (min-width: 1024px) {
+      @apply float-left;
+    }
+  }
+
+  span:last-child {
+    // 1024
+    @media (min-width: 1024px) {
+      @apply float-right;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* Column Builder */
+.section--c-builder {
+  @apply w-full;
+
+  .column-container {
+    @apply flex h-full;
+
+    @media (max-width: 1023px) {
+      @apply flex-col;
+    }
+  }
+
+  .column {
+    &[style] {
+      @media (max-width: 1023px) {
+        @apply w-full #{!important};
+      }
+    }
+
+    &[style]:last-of-type {
+      @media (min-width: 1023px) {
+        padding-right: 0% !important;
+        padding-bottom: 0% !important;
+      }
+    }
+
+    &[style]:first-of-type {
+      @media (min-width: 1023px) {
+        padding-left: 0% !important;
+        padding-top: 0% !important;
+      }
+    }
+  }
+
+  .column__content {
+    height: 100%;
+  }
+}

@@ -1,0 +1,60 @@
+.testimonial--type-b {
+  @apply flex justify-between items-start;
+
+  flex-flow: row wrap;
+
+  .testimonial__content {
+    @apply py-90;
+
+    width: 60%;
+
+    @media (max-width: 1023px) {
+      @apply w-full;
+    }
+
+    .testimonial__content--inner {
+      @apply block mx-auto mr-0 px-15 pr-45;
+
+      max-width: 900px;
+
+      @media (max-width: 1023px) {
+        @apply pr-15;
+      }
+
+      .brm-testimonial {
+        @apply px-45;
+      }
+    }
+
+    .slick-arrow {
+      top: 15%;
+    }
+  }
+
+  .testimonial__logos {
+    @apply h-full bg-no-repeat bg-center bg-cover bg-bottom;
+
+    width: 40%;
+
+    @media (max-width: 1023px) {
+      @apply w-full;
+    }
+
+    .testimonial__logos--inner {
+      @apply block py-45 mx-auto ml-0 px-15 pl-90 flex justify-start items-center;
+
+      max-width: 600px;
+      flex-flow: row wrap;
+
+      @media (max-width: 1023px) {
+        max-width: 100%;
+      }
+
+      .test__bg--image {
+        @apply bg-no-repeat bg-contain bg-center w-1/2 mb-60;
+
+        height: 150px;
+      }
+    }
+  }
+}

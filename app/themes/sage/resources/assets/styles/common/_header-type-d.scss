@@ -1,0 +1,345 @@
+// Update theme colors based off Tailwind.config
+// Output example:  var(--primary-1);
+:root {
+  --white: #fff;
+  --primary-1: #10256b;
+  --primary-2: #f70605;
+  --primary-3: #0769ac;
+  --primary-4: #474747;
+}
+
+.header-d {
+  position: relative;
+  margin-top: 0;
+  transition: all ease 1s;
+  z-index: 20;
+
+  [data-state="open"] .sub-menu {
+    @apply p-0 m-0;
+  }
+
+  .header__branding img {
+    max-width: 340px;
+    filter: brightness(10000%);
+    transition: all ease 0.5s;
+
+    @media (max-width: 1185px) {
+      max-width: 200px;
+    }
+  }
+  // hamburger Icon
+  .w-hamburger {
+    @apply bg-white mr-0 ml-auto;
+
+    right: 15px;
+    margin-top: 0;
+    z-index: 100;
+
+    .nav-is-open & {
+      @apply bg-transparent;
+    }
+  }
+
+  .nav-toggle {
+    z-index: 500;
+
+    span {
+      @apply bg-white;
+
+      &::before,
+      &::after {
+        @apply bg-white;
+
+        .nav-is-open & {
+          @apply bg-white;
+
+          opacity: 1;
+          background-color: white !important;
+        }
+      }
+    }
+  }
+
+  .header__contact {
+    @media (min-width: 1024px) {
+      @apply flex items-center flex-row justify-end;
+
+      .button {
+        @apply ml-30 px-15;
+      }
+    }
+
+    a {
+      @apply text-white;
+
+      font-size: 24px;
+
+      @media (max-width: 1370px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .current_page_item,
+  .current_page_parent {
+    @media (min-width: 1024px) {
+      position: relative;
+
+      a {
+        &::after {
+          @apply absolute w-full bg-primary-4 block mx-auto;
+
+          content: "";
+          height: 2px;
+          bottom: 10px;
+          left: 7px;
+          right: 0;
+
+          @media (max-width: 1023px) {
+            left: 0;
+          }
+        }
+      }
+
+      .sub-menu a::after {
+        @apply hidden;
+      }
+    }
+  }
+
+  // Nav Mobile
+  nav {
+    @apply py-15;
+
+    @media (min-width: 1024px) {
+      @apply flex justify-between items-start py-0;
+    }
+
+    .primary-nav-a {
+      z-index: 100;
+
+      li {
+        @apply mt-2;
+      }
+
+      @media (min-width: 1024px) {
+        @apply flex justify-end items-center mt-0 mr-60;
+
+        li {
+          @apply ml-3 py-15 my-0;
+        }
+      }
+
+      @media (max-width: 1370px) {
+        @apply mr-15;
+
+        li {
+          @apply py-2 px-0 mx-1;
+        }
+      }
+
+      a {
+        @apply uppercase leading-normal text-white;
+
+        font-size: 16px;
+
+        @media (max-width: 1185px) {
+          font-size: 12px;
+        }
+
+        @media (max-width: 1023px) {
+          font-size: 24px;
+        }
+      }
+
+      // sub-menu Background Color control
+      .sub-menu {
+        @media (min-width: 1024px) {
+          @apply bg-white;
+
+          left: -15px !important;
+
+          li {
+            @apply py-2;
+          }
+        }
+      }
+    }
+
+    // 1023 <=
+    @media (max-width: 1023px) {
+      @apply hidden;
+
+      // Navigation Open
+      .nav-is-open & {
+        @apply block mt-0 p-30 fixed w-full bg-primary-2;
+
+        left: 0;
+        top: 0;
+        height: 100vh;
+
+        a {
+          @apply uppercase leading-normal;
+        }
+      }
+    }
+  }
+
+  .logged-in & {
+    margin-top: 30px !important;
+  }
+
+  .contact-icon {
+    filter: brightness(1000%);
+  }
+
+  &:hover {
+    @media (min-width: 1024px) {
+      @apply bg-white;
+
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+
+      .header__branding img,
+      .contact-icon {
+        filter: brightness(100%);
+      }
+
+      .primary-nav-a a,
+      .header__contact a {
+        @apply text-primary-2;
+      }
+
+      .button {
+        color: white !important;
+      }
+    }
+  }
+
+  // Fixed Property
+  #header-fixed & {
+    @apply fixed w-full;
+
+    margin-top: 0;
+    top: 0;
+  }
+}
+
+#header-fixed {
+  // Scrool behavior
+  .scroll-head--d {
+    @apply bg-white;
+
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+
+    .header__branding img {
+      filter: brightness(100%);
+    }
+
+    @media (min-width: 1024px) {
+      .primary-nav-a a {
+        @apply text-primary-2;
+      }
+
+      .header__contact {
+        a {
+          @apply text-primary-2;
+        }
+
+        .button {
+          color: white;
+        }
+      }
+
+      .sub-menu {
+        @apply bg-white;
+      }
+    }
+
+    .w-hamburger {
+      span {
+        @apply bg-primary-2;
+
+        &::before,
+        &::after {
+          @apply bg-primary-2;
+        }
+      }
+    }
+
+    .contact-icon {
+      filter: brightness(100%);
+    }
+  }
+}
+
+///Toggle form
+.form__toggle {
+  @apply w-full;
+
+  position: fixed;
+  overflow: scroll;
+  right: -100%;
+  z-index: 30;
+  transition: all ease 1s;
+
+  @media (max-width: 1023px) {
+    @apply pb-90;
+
+    max-height: 1000px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .form__toggle--inner {
+    max-width: 90%;
+  }
+
+  .display_form & {
+    right: 0;
+  }
+
+  //// form styling
+
+  .gfield_required {
+    color: white !important;
+  }
+
+  input,
+  select,
+  textarea {
+    margin-bottom: 15px;
+    background: transparent !important;
+    border: none;
+    border-bottom: 1px solid white !important;
+    color: white;
+  }
+
+  textarea {
+    height: 100px !important;
+  }
+
+  .gform_button {
+    padding: 15px 30px;
+    padding-top: 20px;
+    background-color: #feba12 !important;
+    border: none !important;
+  }
+}
+
+.pop__icon {
+  filter: brightness(1000%);
+}
+
+.button--close {
+  @apply absolute text-white text-h3;
+
+  top: 30px;
+  right: 15px;
+  cursor: pointer;
+}

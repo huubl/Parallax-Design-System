@@ -1,0 +1,86 @@
+.max-contained .contact--inner {
+  padding: 0 15px !important;
+}
+
+.contact-a {
+  .container {
+    @apply flex justify-between items-start px-0;
+
+    flex-flow: row wrap;
+
+    @media (max-width: 1023px) {
+      flex-flow: column wrap;
+    }
+
+    .contact-info,
+    iframe {
+      @apply w-1/2;
+
+      @media (max-width: 1023px) {
+        @apply w-full;
+      }
+    }
+
+    .contact--inner {
+      @apply block py-60 px-15 mx-auto mr-0;
+
+      max-width: 715px;
+
+      @media (max-width: 1023px) {
+        @apply py-0;
+      }
+    }
+
+    address,
+    .contact-info--tel,
+    .contact-info--email,
+    .contact-info--hours {
+      @apply relative pl-30 text-p;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 18px;
+        height: 23px;
+      }
+
+      a,
+      span {
+        @apply text-primary-3;
+      }
+    }
+
+    .site__title {
+      font-size: 24px;
+    }
+
+    .contact-info--email {
+      &::before {
+        background-image: url(/app/themes/sage/resources/assets/images/envelope.png);
+      }
+    }
+
+    .contact-info--tel {
+      &::before {
+        background-image: url(/app/themes/sage/resources/assets/images/phone.png);
+      }
+    }
+
+    .contact-info--hours {
+      &::before {
+        background-image: url(/app/themes/sage/resources/assets/images/clock.png);
+      }
+    }
+
+    address {
+      &::before {
+        background-image: url(/app/themes/sage/resources/assets/images/location.png);
+      }
+    }
+  }
+}
